@@ -1,11 +1,12 @@
-﻿using ERP_QLBH_BQD.Models;
+﻿
+using SELMs.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace ERP_QLBH_BQD.Controllers
+namespace SELMs.Controllers
 {
     public class HomeController : Controller
     {
@@ -37,10 +38,10 @@ namespace ERP_QLBH_BQD.Controllers
             var user = db.Users.SingleOrDefault(x => x.username == username && x.password == password);
             if (user != null)
             {
-                Session["ISADMIN"] = user.is_admin;
-                Session["USERNAME"] = user.username;
-                Session["FULLNAME"] = user.fullname;
-                Session["POSITION"] = user.position_code;
+                Session["isadmin"] = user.is_admin;
+                Session["username"] = user.username;
+                Session["fullname"] = user.fullname;
+                Session["position"] = user.position_code;
 
 
 

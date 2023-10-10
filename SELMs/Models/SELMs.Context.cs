@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ERP_QLBH_BQD.Models
+namespace SELMs.Models
 {
     using System;
     using System.Data.Entity;

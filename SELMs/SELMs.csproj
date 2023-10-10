@@ -13,8 +13,8 @@
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ERP_QLBH_BQD</RootNamespace>
-    <AssemblyName>ERP_QLBH_BQD</AssemblyName>
+    <RootNamespace>SELMs</RootNamespace>
+    <AssemblyName>SELMs</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
@@ -134,6 +134,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Api\HumanResource\Api_MemberController.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -521,14 +522,7 @@
     <Content Include="Content\css\assets\vendor\tinymce\tinymce.min.js" />
     <Content Include="Content\css\forms\Readme.txt" />
     <Content Include="Content\Images\default.svg" />
-    <Content Include="Content\js\KinhDoanh\BaoGia\DanhSachBaoGiaCtrl.js" />
-    <Content Include="Content\js\KinhDoanh\BaoGia\PrintPhieuBaoGiaCtrl.js" />
-    <Content Include="Content\js\KinhDoanh\BaoGia\TaoBaoGiaCtrl.js" />
-    <Content Include="Content\js\KinhDoanh\KhachHang\DSKhachHangCtrl.js" />
-    <Content Include="Content\js\KinhDoanh\KhachHang\ListKHCtrl.js" />
-    <Content Include="Content\js\NhanVien\PhongBan\PhongBanCtrl.js" />
-    <Content Include="Content\js\ThuMua\HangHoa\DSHangHoaCtrl.js" />
-    <Content Include="Content\js\ThuMua\HangHoa\DSNhomHangCtrl.js" />
+    <Content Include="Content\js\HumanResouce\MemberCtrl.js" />
     <Content Include="Content\Script\node_modules\angular-web-notification\.eslintrc.js" />
     <Content Include="Content\Script\node_modules\angular-web-notification\.gitattributes" />
     <Content Include="Content\Script\node_modules\angular-web-notification\angular-web-notification.js" />
@@ -746,23 +740,10 @@
   <ItemGroup>
     <Folder Include="Api\Authentication\" />
     <Folder Include="Api\Equipment\" />
-    <Folder Include="Api\HumanResource\" />
     <Folder Include="Api\Notification\" />
     <Folder Include="Api\ProjectPortfolio\" />
     <Folder Include="App_Data\" />
-    <Folder Include="Content\js\KeToan\NganHang\KhoanTienDi\" />
-    <Folder Include="Content\js\KeToan\NganHang\KhoanTienVe\" />
-    <Folder Include="Content\js\KeToan\NganHang\TK\" />
-    <Folder Include="Content\js\KeToan\PhieuChi\" />
-    <Folder Include="Content\js\KeToan\PhieuThu\" />
-    <Folder Include="Content\js\KhoVan\DMKho\" />
-    <Folder Include="Content\js\KhoVan\TonKho\" />
-    <Folder Include="Content\js\KinhDoanh\SO\" />
-    <Folder Include="Content\js\KinhDoanh\XuatKho\" />
-    <Folder Include="Content\js\NhanVien\NguoiDung\" />
-    <Folder Include="Content\js\PhanQuyen\" />
-    <Folder Include="Content\js\ThuMua\NCC\" />
-    <Folder Include="Content\js\ThuMua\NhapKho\" />
+    <Folder Include="Views\Api_Member\" />
     <Folder Include="Views\EquipmentManagementReports\" />
   </ItemGroup>
   <ItemGroup>

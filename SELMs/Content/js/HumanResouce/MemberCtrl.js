@@ -1,6 +1,7 @@
 ﻿var app = angular.module("myApp", []);
 
-app.controller('ListKHCtrl', function ($scope, $http, $sce) {
+app.controller('MemberCtrl', function ($scope, $http, $sce) {
+
     var username = $('#username').val();
     var isadmin = $('#isadmin').val();
     $scope.username = $('#username').val();
@@ -55,63 +56,20 @@ app.controller('ListKHCtrl', function ($scope, $http, $sce) {
         // You can customize the notification style and appearance here.
     }
 
-   
-   
+
     //===============Danh sách khách hàng=====================
-    $scope.page = 1;
-    $scope.makhachhang = '';
-    $scope.tencongty = '';
-    $scope.tinh = '';
-    $scope.phanloai = '---';
-    $scope.vendor_status = 0;
-    $scope.dieukhoan = '';
-    $scope.tructhuoc = 'TAHCM';
-    
-    $scope.LoadListKhachHang = function (sotrang) {
+    $scope.LoadMembersList = function () {
         var data = {
-            tukhoa1: $scope.makhachhang,
-            tukhoa2: $scope.tencongty,
-            tukhoa3: $scope.tinh,
-            tukhoa4: $scope.phanloai,
-            tukhoa5: $scope.dieukhoan,
-            term: $scope.vendor_status,
-            tructhuoc: $scope.tructhuoc,
             username: username,
             isadmin: 0,
-            sotrang: 1
         }
-        $scope.page = sotrang;
-        data.sotrang = sotrang
-        $http.post(origin + '/api/Api_KhachHang/GetListKhachHangNew', data).then(function (response) {
-            $scope.ListKhachHang = response.data;
+        $http.post(origin + '/api/Api_Member/GetMembersList', data).then(function (response) {
+            $scope.ListMembers = response.data;
         });
     }
-    $scope.LoadListKhachHang(1);
+    $scope.LoadMembersList();
     $scope.SearchKhachHang = (field, value) => {
         data[field] = value;
         $scope.LoadListKhachHang(1);
     }
-
-    $scope.GetDetailKH = function (kh) {
-        $scope.item = kh;
-        $scope.LoadListLienHeKhachHang(kh);
-        $scope.LoadListPhanHoiKhachHang(kh);
-    }
-    
-    $scope.LoadListLienHeKhachHang = function (item) {
-        var data = {
-            makhachhang: item.MA_KHACH_HANG
-        }
-        $http.post(origin + '/api/Api_KhachHang/GetListLienHeKhachHangNew', data).then(function (response) {
-            $scope.list_lienhe = response.data;
-        });
-    }
-    $scope.LoadListPhanHoiKhachHang = function (item) {
-        var data = {
-            makhachhang: item.MA_KHACH_HANG
-        }
-        $http.post(origin + '/api/Api_KhachHang/GetListPhanHoiKhachHangNew', data).then(function (response) {
-            $scope.list_phanhoi = response.data;
-        });
-    }
-})
+});

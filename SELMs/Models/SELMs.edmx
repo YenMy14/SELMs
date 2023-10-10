@@ -772,7 +772,7 @@ warning 6002: The table/view 'SELMs.dbo.Project_Tag' does not have a primary key
           <End Type="SELMsModel.Project" Role="Project" Multiplicity="*" />
           <End Type="SELMsModel.Tag" Role="Tag" Multiplicity="*" />
         </Association>
-      </Schema>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
